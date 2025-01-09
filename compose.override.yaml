@@ -1,6 +1,8 @@
 # Development environment override
 services:
   php:
+    env_file:
+      - .env.local
     build:
       context: .
       target: frankenphp_dev
@@ -27,6 +29,8 @@ services:
   database:
     ports:
       - "5432"
+    env_file:
+      - .env.local
 ###< doctrine/doctrine-bundle ###
 
 ###> symfony/mailer ###
